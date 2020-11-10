@@ -7,6 +7,9 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "dplayer": "^1.26.0",
+    "video.js": "^7.10.2",
+    "videojs-contrib-hls": "^5.15.0",
     "vue": "^3.0.2"
   },
   "devDependencies": {
