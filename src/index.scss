@@ -53,28 +53,29 @@ html,body {
       outline: none;
       font-size: 22px;
     }
-  
-    button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      outline: none;
-      border: none;
-      border-radius: 20px;
-      padding: 4px 15px;
-      font-size: 16px;
-      line-height: 29px;
-      cursor: pointer;
-      color: white;
-      background-color: #7579e7;
-      box-shadow: 0 0 8px #7579e7;
-      .loadingio-spinner-rolling-3tp4llk6hzy {
-        padding: 6px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-    }
+  }
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  padding: 4px 15px;
+  font-size: 16px;
+  line-height: 29px;
+  cursor: pointer;
+  color: white;
+  background-color: #7579e7;
+  box-shadow: 0 0 8px #7579e7;
+  transition: all .3s;
+  .loadingio-spinner-rolling-3tp4llk6hzy {
+    padding: 6px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

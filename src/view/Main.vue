@@ -2,7 +2,7 @@
   <div class="main">
       <div class="search-wrap">
         <div class="search">
-            <input type="text" placeholder="请输入搜索关键字 !" @keyup.enter="onSubmit" v-model="form.name" />
+            <input type="text" placeholder="请输入名称 !" @keyup.enter="onSubmit" v-model="form.name" />
             <l-botton @click="onSubmit" v-model:loading="loading" > 搜索 </l-botton>
         </div>
       </div>
@@ -42,7 +42,7 @@
 
 import videojs from "video.js"
 
-import DPlayer from "DPlayer"
+import DPlayer from "dplayer"
 
 import api from "../common/http.api.js"
 
@@ -71,10 +71,20 @@ export default {
   methods:{
       async onSubmit(){
           try {
-            this.loading =true;
+            this.loading = true;
             const { data } = await api.getSearch({  kw: this.form.name  })
             this.lists = data.data;
             this.loading = false;
+            if(this.lists.length == 0){
+              this.form.name = '没有找到资源!';
+              setTimeout(()=>{
+                if(this.form.name == '没有找到资源!'){
+                  this.form.name = ''
+                }
+              },2000)
+              return
+            }
+            
             this.$nextTick(()=>{
               window.scrollTo({
                   top: document.querySelector('.list-wrap').offsetTop,
