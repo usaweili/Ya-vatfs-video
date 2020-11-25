@@ -1,15 +1,22 @@
 <template>
-  <Main />
+  <router-view :key="$route.path" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Main from './view/Main.vue'
+import Main from "./views/Main.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+  data(){
+    return {
+      
+    }
+  },
+  created(){
+    console.log();
+  },
   components: {
     Main
   }
-}
+};
 </script>

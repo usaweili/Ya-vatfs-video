@@ -1,17 +1,17 @@
-import axios from 'axios';
+import axios from "axios";
 
 const http = axios.create({
   // baseURL: `${window.location.href}/index.php/api`,
-  baseURL: `/api`,
+  baseURL: `/api`
 });
 
 // Add a request interceptor
 http.interceptors.request.use(
-  function (config) {
+  function(config) {
     // Do something before request is sent
     return config;
   },
-  function (error) {
+  function(error) {
     // Do something with request error
     return Promise.reject(error);
   }
@@ -19,12 +19,12 @@ http.interceptors.request.use(
 
 // Add a response interceptor
 http.interceptors.response.use(
-  function (response) {
+  function(response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
     return response.data;
   },
-  function (error) {
+  function(error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
     return Promise.reject(error);
